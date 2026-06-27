@@ -6,7 +6,7 @@ export const PORTFOLIO_DATA = {
     picture: "/Profile_pic.jpg",
     email: "shivamg727583@gmail.com",
     phone: "+91 7054467583",
-    location: "Bhopal, Madhya Pradesh",
+    location: "Bengaluru, Karnataka, India",
     bio: "Software Engineer with hands-on industry experience building scalable web applications using React.js, Node.js, Express.js, PostgreSQL, and MongoDB. Passionate about software engineering, system design, and developing reliable, high-performance applications.",
     resume: "/Shivam_FullStack_Resume.pdf",
   },
