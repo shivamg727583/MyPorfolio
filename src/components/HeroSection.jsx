@@ -1,94 +1,113 @@
 import { ArrowDown } from "lucide-react";
 import { PORTFOLIO_DATA } from "../assets/data";
 import BubblesAnimated from "./ui/BubblesAnimated";
-// import { useEffect, useRef } from "react";
 
-const HeroSection = ({ scrollToSection }) => {
-  // const sheryInit = useRef(false);
+const stats = [
+  {
+    num: "4+",
+    label: "Months Industry Experience",
+    gradient: "from-blue-600 to-cyan-600",
+  },
+  {
+    num: "10+",
+    label: "Full-Stack Projects",
+    gradient: "from-purple-600 to-pink-600",
+  },
+  {
+    num: "300+",
+    label: "DSA Problems Solved",
+    gradient: "from-green-600 to-emerald-600",
+  },
+  {
+    num: "1",
+    label: "International Internship",
+    gradient: "from-orange-600 to-red-600",
+  },
+];
 
-  // useEffect(() => {
-  //   if (!window.Shery || sheryInit.current) return;
-
-  //   window.Shery.textAnimate(".hero-text", {
-  //     style: 2,
-  //     y: 20,
-  //     delay: 0.1,
-  //     duration: 1.5,
-  //   });
-
-  //   sheryInit.current = true;
-  // }, []);
-
+const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4"
+      className="
+        relative
+        min-h-screen
+        overflow-hidden
+        flex
+        items-center
+        justify-center
+        px-5
+        sm:px-6
+        lg:px-8
+        pt-28
+        sm:pt-32
+        md:pt-36
+        lg:pt-40
+        pb-10
+      "
     >
       <BubblesAnimated />
 
-      <div className="relative z-10 text-center max-w-5xl animate-fadeInUp">
-        <p className="text-lg md:text-2xl text-gray-600 mt-16 font-medium">
-          Hi! I'm{" "}
-          <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {PORTFOLIO_DATA.personal.name}
-          </span>
+      <div className="relative z-10 w-full max-w-6xl mx-auto text-center animate-fadeInUp">
+        <p className="text-base sm:text-lg md:text-xl font-medium text-gray-600">
+          Hello, I'm
         </p>
 
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold hero-text">
+        <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          {PORTFOLIO_DATA.personal.name}
+        </h2>
+
+        <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-none">
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Full Stack
+            Software
           </span>
         </h1>
 
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold leading-tight">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-none">
           <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-            Developer
+            Engineer
           </span>
         </h1>
 
-        <p className="text-base md:text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-          Specializing in{" "}
-          <span className="font-semibold text-blue-600">MERN Stack</span> &{" "}
-          <span className="font-semibold text-purple-600">Next.js</span>
+        <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-gray-600">
+          Building scalable software applications using
+          <span className="font-semibold text-blue-600"> React.js</span>,
+          <span className="font-semibold text-purple-600"> Node.js</span>,
+          <span className="font-semibold text-pink-600"> Java</span>,
+          <span className="font-semibold text-indigo-600"> PostgreSQL</span> and
+          modern software engineering practices.
         </p>
 
-        <button
-          onClick={() => scrollToSection("about")}
-          className="bg-white px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all flex items-center gap-3 mx-auto group hover:scale-105"
-        >
-          <span className="font-semibold">Explore My Work</span>
-          <ArrowDown
-            className="group-hover:translate-y-1 transition-transform text-blue-600"
-            size={24}
-          />
-        </button>
+        <div className="flex justify-center mt-6">
+          <span className="inline-flex items-center justify-center rounded-full border border-blue-200 bg-blue-50 px-4 sm:px-5 py-2 text-xs sm:text-sm md:text-base font-medium text-blue-700">
+            🌍 International Software Engineering Intern • Nextchain Co. Ltd.
+          </span>
+        </div>
 
-        <div className="grid grid-cols-3 gap-6 mt-5 max-w-2xl mx-auto">
-          {[
-            { num: "3+", label: "Months Experience", gradient: "from-blue-600 to-purple-600" },
-            {
-              num: `${PORTFOLIO_DATA.projects.length + 20}+`,
-              label: "Projects",
-              gradient: "from-purple-600 to-pink-600",
-            },
-            {
-              num: `${Object.values(PORTFOLIO_DATA.skills).flat().length}+`,
-              label: "Technologies",
-              gradient: "from-pink-600 to-blue-600",
-            },
-          ].map((stat, i) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mt-10 max-w-5xl mx-auto">
+          {stats.map((stat) => (
             <div
-              key={i}
-              className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform"
+              key={stat.label}
+              className="rounded-3xl border border-gray-100 bg-white/90 backdrop-blur p-5 lg:p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <p
-                className={`text-3xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}
+              <h3
+                className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}
               >
                 {stat.num}
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-600 font-medium leading-5">
+                {stat.label}
               </p>
-              <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <ArrowDown
+            size={28}
+            className="text-gray-400 animate-bounce"
+          />
         </div>
       </div>
     </section>

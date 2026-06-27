@@ -11,10 +11,15 @@ const AboutSection = () => (
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <p className="text-xl text-gray-700 leading-relaxed">{PORTFOLIO_DATA.personal.bio}</p>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Currently pursuing B.Tech at <span className="font-semibold text-purple-600">SIRT Bhopal</span>, 
-            I've gained practical experience building scalable applications and optimizing performance.
-          </p>
+         <p className="text-lg text-gray-600 leading-relaxed">
+  Graduate Software Engineer from{" "}
+  <span className="font-semibold text-purple-600">
+    Sagar Institute of Research and Technology (SIRT), Bhopal
+  </span>
+  , with internship experience building scalable full-stack applications using
+  React.js, Node.js, Express.js, PostgreSQL, and MongoDB. Passionate about
+  solving real-world problems and developing reliable software solutions.
+</p>
 
           <div className="space-y-3 pt-4">
             {[
@@ -47,10 +52,10 @@ const AboutSection = () => (
           </div>
         </div>
 
-        <div className="relative">
-          <div className="w-80 h-80 mx-auto relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-2xl opacity-30 animate-pulse" />
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+       <div className="relative flex justify-center">
+
+  <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+<div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-2xl opacity-30 animate-pulse" />            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
              <img src={PORTFOLIO_DATA.personal.picture} alt={PORTFOLIO_DATA.personal.initials} className="w-full h-full object-cover" />
               {/* <span className="text-white text-8xl font-bold">{ PORTFOLIO_DATA.personal.initials}</span> */}
             </div>
